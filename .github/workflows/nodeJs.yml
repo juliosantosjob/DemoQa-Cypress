@@ -1,0 +1,30 @@
+name: Pipe Node
+
+on:
+  push:
+      branches: [ master ]
+  pull_request:
+      branches: [ master ]
+      
+  schedule:
+    - cron: '* 8 1 * *'
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run test
+
+      - name: Deploy Report Pages to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: ./output

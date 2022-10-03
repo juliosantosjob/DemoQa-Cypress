@@ -10,7 +10,7 @@ Download and install the Nodejs from the link: https://nodejs.org/en/download/
 
 **Clone the project**
 ``` 
-git clone https://github.com/julio958214/Cypress-DemoQa.git
+git clone https://github.com/juliosantosjob/DemoQa-Cypress.git
 ```
 **Install project dependencies**
 

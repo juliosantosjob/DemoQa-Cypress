@@ -21,7 +21,7 @@ jobs:
         with:
           start: npm run test
 
-      - name: Deploy Report Pages to Github Pages
+      - name: Deploy Report Pages to Github Pages 
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:

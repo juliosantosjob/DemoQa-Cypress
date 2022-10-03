@@ -30,7 +30,7 @@ describe('Test with elements', function () {
         cy.get('svg[class*="rct-icon rct-icon-expand-c"]').eq(1).click();
         cy.get('button[class="rct-collapse rct-collapse-btn"]').eq(3).click();
 
-        cy.get('[for="tree-node-react"]').find('[class="rct-checkbo"]').click();
+        cy.get('[for="tree-node-react"]').find('[class="rct-checkbox"]').click();
         cy.get('#tree-node-react').should('be.checked');
     });
 

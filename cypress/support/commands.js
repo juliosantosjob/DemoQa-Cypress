@@ -25,9 +25,21 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 before(() => {
-    cy.log('Start');
+    cy.log('Starting...');
+    cy.task('deleteFolder', 'cypress/screenshots');
 });
 
 beforeEach(() => {
     cy.visit(Cypress.env('baseUrl'));
+});
+
+afterEach(function () {
+    if (this.currentTest.state === 'failed')
+        return cy.wait(1500).screenshot('error/testFailed');
+    else
+        return cy.wait(1500).screenshot('output/testPassed');
+});
+
+after(() => { 
+    cy.log('Finishing');
 });

@@ -29,8 +29,8 @@ describe('Test with Forms', function () {
         cy.get('#currentAddress').type(data.currentAddress);
 
         cy.get('.css-tlfecz-indicatorContainer').first().click();
-        cy.get('#state').contains('Uttar Pradesh').click();
-        cy.get('#city  .css-yk16xz-control  .css-1hwfws3').click();
+        cy.get('#state').contains('Uttar Pradesh').click({force: true});
+        cy.get('#city  .css-yk16xz-control  .css-1hwfws3').click({force: true});
 
         cy.contains('Merrut').click();
         cy.get('[type="submit"]').click();

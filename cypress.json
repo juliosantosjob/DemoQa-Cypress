@@ -1,14 +1,5 @@
 {
     "viewportWidth": 1920,
     "viewportHeight": 1080,
-    "video": false,
-    "screenshotOnRunFailure": false,
-    
-    "reporter": "cypress-mochawesome-reporter",
-    "reporterOptions": {
-      "reportDir": "output",
-      "charts": true,
-      "reportPageTitle": "Report Julio Santos",
-      "embeddedScreenshots": true
-    }
+    "screenshotOnRunFailure": false
 }

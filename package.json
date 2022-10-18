@@ -4,20 +4,21 @@
   "description": "Project for training",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypress open",
-    "cy:test": "npx cypress run",
-    "cy:runDefault": "cypress run --spec cypress/integration/*.spec.js",
-    "cy:runChrome": "cypress run --browser chrome cypress/integration/*.spec.js",
-    "cy:runChromeHeadless": "cypress run --headless --browser chrome cypress/integration/*.spec."
+    "cy:all": "cypress run --config video=true --env allure=true",
+    "allure:gener": "allure generate allure-results --clean -o allure-report",
+    "allure:clean": "(if exist allure-results (rmdir /S /Q allure-results && mkdir allure-results))",
+    "allure:history": "(if exist allure-report/history (move allure-report/history allure-results/history))",
+    "test": "npm-run-all allure:clean allure:gener cy:all allure:history"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.3.0",
+    "@shelex/cypress-allure-plugin": "^2.33.1",
     "cypress": "9.7.0",
     "cypress-file-upload": "^5.0.8",
     "eslint-plugin-cypress": "^2.12.1",
-    "cypress-mochawesome-reporter": "^3.2.2"
+    "npm-run-all": "^4.1.5"
   }
 }

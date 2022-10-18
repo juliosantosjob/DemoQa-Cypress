@@ -20,7 +20,8 @@
 
 import './commands';
 import 'cypress-file-upload';
-import 'cypress-mochawesome-reporter/register';
+import '@shelex/cypress-allure-plugin';
+require('@shelex/cypress-allure-plugin');
 
 const app = window.top;
 if (!app.document.head.querySelector('[data-hide-command-log-request]')) {

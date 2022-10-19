@@ -4,12 +4,13 @@
   "description": "Project for training",
   "main": "index.js",
   "scripts": {
-    "cy:all": "cypress run --config video=true --env allure=true",
-    "allure:gener": "allure generate allure-results --clean -o allure-report",
-    "allure:clean": "(if exist allure-results (rmdir /S /Q allure-results && mkdir allure-results))",
-    "allure:history": "(if exist allure-report/history (move allure-report/history allure-results/history))",
-    "test": "npm-run-all allure:clean allure:gener cy:all allure:history"
-  },
+    "test": "node cypress/scripts/runner.js",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run --config specPattern=cypress/integration/* --env allure=true --browser chrome",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
+    "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

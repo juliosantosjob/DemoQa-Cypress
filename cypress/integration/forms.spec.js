@@ -28,12 +28,12 @@ describe('Test with Forms', function () {
         cy.get('#uploadPicture').attachFile(data.file);
         cy.get('#currentAddress').type(data.currentAddress);
 
-        cy.get('.css-tlfecz-indicatorContainer').first().click();
+        cy.get('.css-tlfecz-indicatorContainer').first().click({force: true});
         cy.get('#state').contains('Uttar Pradesh').click({force: true});
         cy.get('#city  .css-yk16xz-control  .css-1hwfws3').click({force: true});
 
-        cy.contains('Merrut').click();
-        cy.get('[type="submit"]').click();
+        cy.contains('Merrut').click({force: true});
+        cy.get('[type="submit"]').click({force: true});
 
         cy.contains('tr td', 'Student Name').next().should('contain', data.firstName).and('contain', data.lastName);
         cy.contains('tr td', 'Student Email').next().should('contain', data.email);

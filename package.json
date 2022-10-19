@@ -9,7 +9,7 @@
     "allure:clean": "(if exist allure-results (rmdir /S /Q allure-results && mkdir allure-results))",
     "allure:history": "(if exist allure-report/history (move allure-report/history allure-results/history))",
     "test": "npm-run-all allure:clean allure:gener cy:all allure:history"
-  },
+},
   "keywords": [],
   "author": "",
   "license": "ISC",

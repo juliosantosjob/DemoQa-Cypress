@@ -18,6 +18,8 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        if: always()
+        continue-on-error: true
         with:
           start: npm run test
 

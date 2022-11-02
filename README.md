@@ -1,6 +1,4 @@
-# Project execution
-
-### Project NPM-Cypress
+## Project DemoQa-Cypress
 
 I created this project by adding its execution in Github Actions with the Allure report plugin, and published the report using github pages, in which it is possible to follow the result of the last execution with evidence of validation at the end of each test.
 

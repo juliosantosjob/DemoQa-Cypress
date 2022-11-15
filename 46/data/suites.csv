@@ -1,5 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Oct 19 13:28:12 GMT 2022","Wed Oct 19 13:28:24 GMT 2022","12470","","Test with Forms","","","","Forms",""
-"passed","Wed Oct 19 13:27:13 GMT 2022","Wed Oct 19 13:27:29 GMT 2022","15935","","Test with elements","","","","Text Box",""
-"passed","Wed Oct 19 13:27:32 GMT 2022","Wed Oct 19 13:27:38 GMT 2022","5569","","Test with elements","","","","ChecK Box",""
-"passed","Wed Oct 19 13:27:41 GMT 2022","Wed Oct 19 13:27:46 GMT 2022","4608","","Test with elements","","","","Radio Button",""

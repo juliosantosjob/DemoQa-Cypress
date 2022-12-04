@@ -13,13 +13,19 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout project
         uses: actions/checkout@v2
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
+      - name: Setup Node environment
+        uses: actions/setup-node@v2.2.0
         with:
-          start: npm run test
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
 
       - name: Get Allure history
         uses: actions/checkout@v2

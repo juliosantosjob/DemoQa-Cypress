@@ -20,10 +20,3 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm run test
-          
-      - name: Deploying report in gh-pages
-        if: always()
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ./allure-results

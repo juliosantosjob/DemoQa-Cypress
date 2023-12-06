@@ -1,5 +1,6 @@
-const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 const { defineConfig } = require('cypress');
+
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
     modifyObstructiveCode: true,
@@ -8,9 +9,6 @@ module.exports = defineConfig({
             config.baseUrl = 'https://demoqa.com';
             allureWriter(on, config);
             return config;
-        },
-        env: {
-            allure: true
         }
     }
 });

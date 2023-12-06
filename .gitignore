@@ -1,2 +1,5 @@
+allure-report
+allure-results
 node_modules
-*.mp4
+cypress/videos
+cypress/screenshots

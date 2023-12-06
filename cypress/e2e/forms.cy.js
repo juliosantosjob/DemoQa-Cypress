@@ -1,11 +1,9 @@
-/// <reference types="cypress" />
+import data from '../support/constants/forms';
 
-import data from '../constants/forms';
+describe('Test with Forms', () => {
 
-describe('Test with Forms', function () {
-    it('Forms', function () {
-        cy.visit(`${Cypress.env('baseUrl')}/automation-practice-form`);
-
+    it('Validating forms', () => {
+        cy.visit('/automation-practice-form');
         cy.get('#firstName').type(data.firstName);   
         cy.get('#lastName').type(data.lastName);
 

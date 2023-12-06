@@ -1,10 +1,9 @@
-/// <reference types="cypress" />
+import data from '../support/constants/elements';
 
-import data from '../constants/elements';
+describe('Interface elements', () => {
 
-describe('Test with elements', function () {
-    it('Text Box', function () {
-        cy.visit(`${Cypress.env('baseUrl')}/elements`);
+    it('Validating textbox', () => {
+        cy.visit('/elements');
         cy.get('.main-header').should('contain', 'Elements');
         cy.contains('Text Box').click();
 
@@ -22,8 +21,8 @@ describe('Test with elements', function () {
         cy.get('.border').find('#permanentAddress').should('contain', data.permanentAddress);
     });
 
-    it('ChecK Box', function () {
-        cy.visit(`${Cypress.env('baseUrl')}/checkbox`);
+    it('Validating checKbox', () => {
+        cy.visit('/checkbox');
         cy.get('.main-header').should('contain', 'Check Box');
 
         cy.get('.rct-collapse .rct-icon').click();
@@ -34,10 +33,10 @@ describe('Test with elements', function () {
         cy.get('#tree-node-react').should('be.checked');
     });
 
-    it('Radio Button', function () {    
-        cy.visit(`${Cypress.env('baseUrl')}/radio-button`);
+    it('Validating radio button', () => {
+        cy.visit('/radio-button');
         cy.get('.main-header').should('contain', 'Radio Button');
-        cy.get('#yesRadio').click({ force:true }).check();
+        cy.get('#yesRadio').click({ force: true }).check();
 
         cy.get('#yesRadio').should('be.checked');
         cy.get('#impressiveRadio').should('not.be.checked');

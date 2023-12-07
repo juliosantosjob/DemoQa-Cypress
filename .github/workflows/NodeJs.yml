@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v3
+        
+      - name: install project
+        run: npm install
       
       - name: cache clear
         run: npx cypress cache clear
@@ -20,7 +23,7 @@ jobs:
         uses: cypress-io/github-action@v6
 
       - name: exec tests
-        run: npm run test
+        run: npm run allure:test
 
       - name: Get Allure history
         uses: actions/checkout@v2

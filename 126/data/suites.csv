@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Dec 07 22:14:58 GMT 2023","Thu Dec 07 22:15:00 GMT 2023","2150","","Interface elements","","","","Validating checKbox",""
+"passed","Thu Dec 07 22:15:11 GMT 2023","Thu Dec 07 22:15:18 GMT 2023","7030","","Test with Forms","","","","Validating forms",""
+"passed","Thu Dec 07 22:15:00 GMT 2023","Thu Dec 07 22:15:07 GMT 2023","6660","","Interface elements","","","","Validating radio button",""
+"passed","Thu Dec 07 22:14:53 GMT 2023","Thu Dec 07 22:14:58 GMT 2023","5288","","Interface elements","","","","Validating textbox",""

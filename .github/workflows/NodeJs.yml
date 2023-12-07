@@ -18,10 +18,9 @@ jobs:
 
       - name: Cypress run 🧪
         uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm run test
-          browser: chrome
+
+      - name: exec tests
+        run: npm run test
 
       - name: Get Allure history
         uses: actions/checkout@v2

@@ -8,5 +8,6 @@ module.exports = {
     mobile: '7185551313',
     hobbies: 'Music',
     currentAddress: faker.address.streetAddress(),
-    file: 'image/teste-de-image.jpg',
+    permanentAddress: faker.address.streetAddress(),
+    file: '/test-image.jpg',
 };

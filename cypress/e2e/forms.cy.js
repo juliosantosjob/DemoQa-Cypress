@@ -1,4 +1,4 @@
-import data from '../support/constants/forms';
+import data from '../support/radomData';
 
 describe('Test with Forms', () => {
 

@@ -1,20 +1,20 @@
-import data from '../support/constants/elements';
+import data from '../support/radomData';
 
 describe('Interface elements', () => {
-
+    
     it('Validating textbox', () => {
         cy.visit('/elements');
         cy.get('.main-header').should('contain', 'Elements');
         cy.contains('Text Box').click();
 
-        cy.get('#userName').type(data.name);
+        cy.get('#userName').type(data.firstName);
         cy.get('#userEmail').type(data.email);
 
         cy.get('#currentAddress').type(data.currentAddress);
         cy.get('#permanentAddress').type(data.permanentAddress);
         cy.get('[type="button"]').last().click();
 
-        cy.get('#name').should('contain', data.name);
+        cy.get('#name').should('contain', data.firstName);
         cy.get('#email').should('contain', data.email);
 
         cy.get('.border').find('#currentAddress').should('contain', data.currentAddress);

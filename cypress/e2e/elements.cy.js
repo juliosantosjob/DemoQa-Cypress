@@ -31,7 +31,7 @@ describe('Interface elements', () => {
         cy.get('#tree-node-react').should('be.checked');
     });
 
-    it.only('Validating radio button', () => {
+    it('Validating radio button', () => {
         cy.visit('/radio-button');
 
         cy.get('#yesRadio').check({ force: true });

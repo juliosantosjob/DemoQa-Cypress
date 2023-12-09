@@ -1,7 +1,6 @@
 import data from '../support/radomData';
 
 describe('Interface elements', () => {
-
     it('Validating textbox', () => {
         cy.visit('/elements');
         cy.contains('Text Box').click();
@@ -22,7 +21,7 @@ describe('Interface elements', () => {
 
     it('Validating checKbox', () => {
         cy.visit('/checkbox');
-        cy.get('.rct-collapse .rct-icon').click();
+        cy.get('button[title="Toggle"]').click();
 
         cy.get('svg[class*="rct-icon rct-icon-expand-c"]').eq(1).click();
         cy.get('button[class="rct-collapse rct-collapse-btn"]').eq(3).click();
@@ -31,7 +30,7 @@ describe('Interface elements', () => {
         cy.get('#tree-node-react').should('be.checked');
     });
 
-    it.only('Validating radio button', () => {
+    it('Validating radio button', () => {
         cy.visit('/radio-button');
 
         cy.get('#yesRadio').check({ force: true });

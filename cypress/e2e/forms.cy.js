@@ -1,7 +1,6 @@
 import data from '../support/radomData';
 
 describe('Test with Forms', () => {
-
     it('Validating forms', () => {
         cy.visit('/automation-practice-form');
         cy.get('#firstName').type(data.firstName);   
@@ -13,8 +12,8 @@ describe('Test with Forms', () => {
         cy.get('#userNumber').type(data.mobile);
         cy.get('#dateOfBirthInput').click();
 
-        cy.get('select[class="react-datepicker__month-select"]').select('February');
-        cy.get('.react-datepicker__year-select').select('1997');
+        cy.get('.react-datepicker__month-select').select(data.month);
+        cy.get('.react-datepicker__year-select').select(data.year);
 
         cy.get('[class*="--021"]').click();
         cy.get('#subjectsContainer').type('Accounting').first().click();
@@ -33,12 +32,14 @@ describe('Test with Forms', () => {
         cy.contains('Merrut').click({force: true});
         cy.get('[type="submit"]').click({force: true});
 
-        cy.contains('tr td', 'Student Name').next().should('contain', data.firstName).and('contain', data.lastName);
-        cy.contains('tr td', 'Student Email').next().should('contain', data.email);
-        cy.contains('tr td', 'Gender').next().should('contain', data.gender);
+        cy.get('tbody > :nth-child(1)')
+            .should('contain', data.firstName)
+            .and('contain', data.lastName);
+        cy.get('tbody > :nth-child(2)').should('contain', data.email);
+        cy.get('tbody > :nth-child(3)').should('contain', data.gender);
 
-        cy.contains('tr td', 'Mobile').next().should('contain', data.mobile);
-        cy.contains('tr td', 'Date of Birth').next().should('contain', '21 February,1997');
-        cy.contains('tr td', 'Address').next().should('contain', data.currentAddress);            
+        cy.get('tbody > :nth-child(4)').should('contain', data.mobile);
+        cy.get('tbody > :nth-child(5)').should('contain', `${data.month, data.year}`);
+        cy.contains('tr td', 'Address').next().should('contain', data.currentAddress);  
     });
 });

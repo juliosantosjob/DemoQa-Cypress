@@ -9,8 +9,6 @@ module.exports = defineConfig({
             allureWriter(on, config);
             return config;
         },
-        env: {
-            allure: true
-        }
+        env: { allure: true }
     }
 });
